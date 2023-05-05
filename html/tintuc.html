@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARISTINO</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .wrapper-tintuc h6{
+            color: orange;
+            font-weight: 200;
+        }
+        .header{
+            font-size: 16px;
+        }
+        .wrapper-tintuc{
+            max-width: 1170px;
+            margin: 0 auto;
+            margin-top: 15px;
+        }
+        .wrapper-tintuc ul{
+            list-style: none;
+        }
+        .tintuc{
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .tintuc li{
+            flex-basis: 30%;
+            padding-left: 15px;
+            padding-right: 15px;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        .tintuc li img{
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .tintuc li .tintuc-top a.tintuc-img{
+            display: block;
+        }
+
+        .tintuc li .tintuc-top a.tintuc-img:hover img{
+            filter: opacity(80%);
+        }
+
+        .tintuc li a{
+            display: block;
+            text-decoration: none;
+        }
+        .tintuc li .tintuc-name{
+            padding: 3px 0px;
+            color: black;
+        }
+        .tintuc li .tintuc-name:hover{
+            color: red;
+        }
+        .sanpham li .sanpham-price{
+            color: black;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="wrapper">
+            <div id="header">
+                <a href="" class="logo">
+                    <img src="../img/logo.png" alt="">
+                </a>
+                <div id="menu">
+                    <div class="item">
+                        <a href="../index.html">Trang chủ</a>
+                    </div>
+                    <div class="item">
+                        <a href="../html/sanpham.html">Sản phẩm</a>
+                    </div>
+                    <div class="item">
+                        <a href="../html/tintuc.html">Tin tức</a>
+                    </div>
+                    <div class="item">
+                        <a href="../html/lienhe.html">Liên hệ</a>
+                    </div>
+                </div>
+                <div id="search">
+                    <input class="form-control sm-1" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                    <button class="btn btn-outline-success my-1 my-sm-0" type="submit">Tìm</button>
+                </div>
+                <div id="actions">
+                    <div class="item">
+                        <a href="../html/login.html"><img src="../img/user.png" alt=""></a>
+                    </div>
+                    <div class="item">
+                        <a href="../html/trangsanphan.html"><img src="../img/cart.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        <div class="wrapper-tintuc">
+            <div class="header">
+                <p>Trang chủ / Tin tức</p>
+            </div>
+            <ul class="tintuc">
+                <li>
+                    <div class="tintuc-item">
+                        <div class="tintuc-top">
+                            <a href="../html/sanpham.html" class="tintuc-img">
+                                <img src="../img/tintuc1.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="tintuc-info">
+                            <h6>Tin tức Aristino</h6>
+                            <a href="../html/sanpham.html" class="tintuc-name">TÁI HIỆN DẤU ẤN VIỆT NAM QUA NHỮNG NHỊP CẦU</a>
+                            <div class="tintuc-body">Những chứng nhân lịch sử sẽ được tái sinh đầy kiêu hãnh để viết tiếp nên câu chuyện tự hào giá trị và bản sắc văn hóa</div>
+                            <a href="../html/sanpham.html" class="xem-them">Xem thêm</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="tintuc-item">
+                        <div class="tintuc-top">
+                            <a href="../html/sanpham.html" class="tintuc-img">
+                                <img src="../img/tintuc2.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="tintuc-info">
+                            <h6>Tin tức Aristino</h6>
+                            <a href="../html/sanpham.html" class="tintuc-name">ARISTINO SUMMER COLLECTION 2023</a>
+                            <div class="tintuc-body">Lấy cảm hứng từ phong cách thời trang của doanh nhân, bộ sưu tập Xuân Hè mang đến những bản phối lịch lãm, chỉn</div>
+                            <a href="../html/sanpham.html" class="xem-them">Xem thêm</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="tintuc-item">
+                        <div class="tintuc-top">
+                            <a href="../html/sanpham.html" class="tintuc-img">
+                                <img src="../img/tintuc3.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="tintuc-info">
+                            <h6>Tin tức Aristino</h6>
+                            <a href="../html/sanpham.html" class="tintuc-name">𝐒𝐓𝐘𝐋𝐈𝐒𝐓 𝐅𝐎𝐑 𝐆𝐄𝐍𝐓𝐋𝐄𝐌𝐄𝐍 | CHƯƠNG TRÌNH TỦ ĐỒ QUÝ ÔNG</a>
+                            <div class="tintuc-body">Đồng hành cùng khách hàng xây dựng phong cách thời trang cá nhân</div>
+                            <a href="../html/sanpham.html" class="xem-them">Xem thêm</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="tintuc-item">
+                        <div class="tintuc-top">
+                            <a href="../html/sanpham.html" class="tintuc-img">
+                                <img src="../img/tintuc4.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="tintuc-info">
+                            <h6>Tin tức Aristino</h6>
+                            <a href="../html/sanpham.html" class="tintuc-name">NHỮNG ĐIỀU CẦN BIẾT VỀ ĐẶC TÍNH CỦA DA TỰ NHIÊN</a>
+                            <div class="tintuc-body">Do tính chất da tự nhiên tùy thuộc vị trí da sử dụng trên sản phẩm. Bề mặt da trên sản phẩm sẽ không đồng đều, khác</div>
+                            <a href="../html/sanpham.html" class="xem-them">Xem thêm</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="tintuc-item">
+                        <div class="tintuc-top">
+                            <a href="../html/sanpham.html" class="tintuc-img">
+                                <img src="../img/tintuc5.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="tintuc-info">
+                            <h6>Tin tức Aristino</h6>
+                            <a href="../html/sanpham.html" class="tintuc-name">GỢI Ý CÁCH PHÂN BIỆT SẢN PHẨM ARISTINO TRONG CÁC CỬA HÀNG TỔNG HỢP</a>
+                            <div class="tintuc-body">Là một trong những thương hiệu thời trang nam hàng đầu Việt Nam, để đưa sản phẩm phủ rộng đến  tay người tiêu</div>
+                            <a href="../html/sanpham.html" class="xem-them">Xem thêm</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="tintuc-item">
+                        <div class="tintuc-top">
+                            <a href="../html/sanpham.html" class="tintuc-img">
+                                <img src="../img/tintuc6.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="tintuc-info">
+                            <h6>Tin tức Aristino</h6>
+                            <a href="../html/sanpham.html" class="tintuc-name">Thương hiệu thời trang nam Aristino ra mắt dịch vụ may đo cao cấp</a>
+                            <div class="tintuc-body">Đánh dấu HÀNH TRÌNH 10 năm đồng hành cùng khách hàng Việt, Aristino CHO RA MẮT dịch vụ may đo cao cấp kết hợp</div>
+                            <a href="../html/sanpham.html" class="xem-them">Xem thêm</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>   
+
+        <div class="list-page">
+            <div class="item">
+                <a href="">1</a>
+            </div>
+            <div class="item">
+                <a href="">2</a>
+            </div>
+            <div class="item">
+                <a href="">3</a>
+            </div>
+            <div class="item">
+                <a href="">4</a>
+            </div>
+        </div><br><br>
+
+        <div id="footer">
+            <div class="box">
+                <div class="logo">
+                    <img src="../img/logo.png" alt="">
+                </div><br>
+                <h6>Giấy chứng nhận Đăng ký Kinh doanh số 0105911105 do Sở Kế hoạch và Đầu tư Thành phố Hà Nội cấp lần đầu ngày 08/06/2012 và sửa đổi lần thứ 10 ngày 05/05/2022</h6>
+            </div>
+            <div class="box">
+                <h4>Về chúng tôi</h4>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="../html/thuonghieu.html">Câu chuyện thương hiệu</a>
+                    </div>
+                    <div class="item">
+                        <a href="../html/tintuc.html">Tin tức</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Tuyển dụng</a>
+                    </div>
+                    <div class="item">
+                        <a href="../html/lienhe.html">Liên hệ</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Chính sách bán hàng</h4>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="">Chính sách đổi hàng</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Chính sách bảo hành</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Chính sách giao nhận</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Chính sách bảo mật</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Tư vấn</h4>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="">Tư vấn phong cách</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Tư vấn chọn size</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Hướng dẫn mua hàng</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Hỏi đáp</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Đăng ký nhận tin</h4>
+                <form action="">
+                    <input type="text" placeholder="Nhập email của bạn">
+                    <button>Nhận tin</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p class="p-footer">© 2022 K&G Vietnam. All Rights Reserved</p>
+            <img class="img-footer" src="../img/bocongthuong.jfif" alt="">
+        </div>
+    </div>
+</body>
+</html>

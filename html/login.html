@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARISTINO</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
+    <style>
+        h3.text-center{
+            margin-bottom: 30px;
+        }
+        .divider:before {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #eee;
+        }
+        #btn:hover{
+            background-color: #f70000;
+        }
+        .table-tk{
+            margin-left: 200px;
+            width: 1089px;
+        }
+        /* modal */
+        .modal-content{
+            background-color: rgba(89, 108, 129, 1.5);
+            border-radius: 30px;
+        }
+    </style>
+    <!-- Javascript -->
+    <script>
+         $(document).ready(function() {
+            var stt = 1;
+            $("#btnOpen").click(function (e) { 
+                $("#modal").modal();
+            });
+            function kiemTraEmail() {
+                let reg = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+                let txtEmail = $("#txtEmail").val();
+                if(reg.test(txtEmail)) {
+                    $("#tbEmail").html("(*)");
+                    return true;
+                } else {
+                    $("#tbEmail").html("Email không hợp lệ");
+                    return false;
+                }
+            }
+            $("#txtEmail").blur(function (e) { 
+                kiemTraEmail();
+            });
+            function kiemTraGmail() {
+                let reg = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+                let txtEmailDN = $("#txtEmailDN").val();
+                if(reg.test(txtEmailDN)) {
+                    $("#tbEmailDN").html("(*)");
+                    return true;
+                } else {
+                    $("#tbEmailDN").html("Email không hợp lệ");
+                    return false;
+                }
+            }
+            $("#txtEmailDN").blur(function (e) { 
+                kiemTraGmail();
+            });
+            function kiemTraHoTenNhanVien() {
+                let reg = /^([A-Z][a-z]*\s)+[A-Z][a-z]*$/;
+                let txtHoten = $("#txtHoten").val()
+                if(reg.test(txtHoten)) {
+                    $("#tbHoten").html("(*)");
+                    return true;
+                }
+                else {
+                    $("#tbHoten").html("Chỉ dùng chữ hoa đầu từ không dùng số không rỗng");
+                    return false;
+                }
+            }
+            $("#txtHoten").blur(function (e) { 
+                kiemTraHoTenNhanVien()
+            });
+            function kiemTraSDT() {
+                let reg = /^\d{8,11}$/;
+                let txtSDT = $("#txtSDT").val()
+                if(reg.test(txtSDT)) {
+                    $("#tbSDT").html("(*)");
+                    return true;
+                }
+                else {
+                    $("#tbSDT").html("Số điện thoại không hợp lệ");
+                    return false;
+                }
+            }
+            $("#txtSDT").blur(function (e) { 
+                kiemTraSDT()
+            });
+            function kiemTraNgay() {
+                let txtDate = new Date($("#txtDate").val());
+                if(txtDate.getFullYear() < 2013) {
+                    $("#tbDate").html("(*)");
+                    return true;
+                } else {
+                    $("#tbDate").html("Tuổi phải trên 10");
+                    return false;
+                }
+            }
+            $("#txtDate").blur(function (e) { 
+                kiemTraNgay()
+            });
+            function kiemTraPass() {
+                let txtMatkhau = $("#txtMatkhau");
+                if(txtMatkhau.val()=="") {
+                    $("#tbMatkhau").html("Nhập mật khẩu");
+                    return false;
+                }
+                else {
+                    $("#tbMatkhau").html("(*)");
+                    return true;
+                }
+            }
+            $("#txtMatkhau").blur(function (e) { 
+                kiemTraPass()
+            });
+            function kiemTraPassDN() {
+                let txtMatkhauDN = $("#txtMatkhauDN");
+                if(txtMatkhauDN.val()=="") {
+                    $("#tbMatkhauDN").html("Nhập mật khẩu");
+                    return false;
+                }
+                else {
+                    $("#tbMatkhauDN").html("(*)");
+                    return true;
+                }
+            }
+            $("#txtMatkhauDN").blur(function (e) { 
+                kiemTraPassDN()
+            });
+            $("#btnThem").click(function (e) { 
+                if(kiemTraEmail() == false || kiemTraHoTenNhanVien() == false || kiemTraPass() == false|| kiemTraSDT() == false|| kiemTraNgay() == false) {
+                    alert("Bạn chưa nhập đúng hay đủ thông tin!")
+                }else {
+                    let txtHoten = $("#txtHoten").val();
+                    let txtSDT = $("#txtSDT").val();
+                    let txtEmail = $("#txtEmail").val();
+                    let txtDate = $("#txtDate").val();
+                    let trNew = "<tr><td>"+ stt +"</td><td>"+ txtHoten +"</td><td>"+ txtSDT+"</td><td>"+ txtEmail +"</td><td>"+ txtDate
+                    $("#tblNV").append(trNew);
+                    stt++;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <a href="" class="logo">
+                <img src="../img/logo.png" alt="">
+            </a>
+            <div id="menu">
+                <div class="item">
+                    <a href="../index.html">Trang chủ</a>
+                </div>
+                <div class="item">
+                    <a href="../html/sanpham.html">Sản phẩm</a>
+                </div>
+                <div class="item">
+                    <a href="../html/tintuc.html">Tin tức</a>
+                </div>
+                <div class="item">
+                    <a href="../html/lienhe.html">Liên hệ</a>
+                </div>
+            </div>
+			<div id="search">
+				<input class="form-control sm-1" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+				<button class="btn btn-outline-success my-1 my-sm-0" type="submit">Tìm</button>
+			</div>
+            <div id="actions">
+                <div class="item">
+                    <a href="../html/login.html"><img src="../img/user.png" alt=""></a>
+                </div>
+                <div class="item">
+                    <a href="../html/trangsanphan.html"><img src="../img/cart.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <section class="vh-100">
+            <div class="container py-5 h-100">
+              <div class="row d-flex align-items-center justify-content-center h-100">
+                <div class="col-md-8 col-lg-7 col-xl-6">
+                  <img style="height: 500px;" src="../img/slide3.jpg"
+                    class="img-fluid" alt="image">
+                </div>
+                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                  <form>
+                    <!-- Email input -->
+                    <h3 class="text-center" style="font-weight: 600;">ĐĂNG NHẬP</h3>
+                    <div class="form-outline mb-4">
+                      <input type="email" id="txtEmailDN" class="form-control form-control-lg" placeholder="Nhập email"/>
+                      <label class="form-label" for="form1Example13">Email address</label>
+                      <span id="tbEmailDN" class="text-danger">(*)</span>
+                    </div>
+          
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                      <input type="password" id="txtMatkhauDN" class="form-control form-control-lg" placeholder="Nhập mật khẩu"/>
+                      <label class="form-label" for="form1Example23">Password</label>
+                      <span id="tbMatkhauDN" class="text-danger">(*)</span>
+                    </div>
+          
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+                      <!-- Checkbox -->
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                        <label class="form-check-label" for="form1Example3"> Nhớ mật khẩu </label>
+                      </div>
+                      <a href="#!">Quên mật khẩu?</a>
+                    </div>
+          
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-danger btn-lg btn-block">Đăng nhập</button>
+          
+                    <div class="divider d-flex align-items-center my-4">
+                      <a id="btnOpen" href="#">Đăng ký</a>
+                      <p class="text-center fw-bold mx-3 mb-0 text-muted">Hoặc đăng nhập bằng</p>
+                    </div>
+          
+                    <a class="btn btn-primary btn-lg btn-block" id="btn" style="background-color: #3b5998" href="#!"
+                      role="button">
+                      <img src="../img/facebook.svg" alt="">   Facebook
+                    </a>
+                    <a class="btn btn-primary btn-lg btn-block" id="btn" style="background-color: #55acee" href="#!"
+                      role="button">
+                       <img src="../img/twitter.svg" alt="">   Twitter</a>
+          
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="table-tk">
+            <div class="row">
+                <h5 style="font-weight: bold; text-align: center;">Danh sách tài khoản đăng ký </h5>
+            </div>
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered bg-info" id="tblNV">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Họ tên</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Email</th>
+                                    <th>Ngày sinh</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+                </div> 
+          </div>
+              
+          <div id="footer">
+            <div class="box">
+                <div class="logo">
+                    <img src="../img/logo.png" alt="">
+                </div><br>
+                <h6>Giấy chứng nhận Đăng ký Kinh doanh số 0105911105 do Sở Kế hoạch và Đầu tư Thành phố Hà Nội cấp lần đầu ngày 08/06/2012 và sửa đổi lần thứ 10 ngày 05/05/2022</h6>
+            </div>
+            <div class="box">
+                <h4>Về chúng tôi</h4>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="../html/thuonghieu.html">Câu chuyện thương hiệu</a>
+                    </div>
+                    <div class="item">
+                        <a href="../html/tintuc.html">Tin tức</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Tuyển dụng</a>
+                    </div>
+                    <div class="item">
+                        <a href="../html/lienhe.html">Liên hệ</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Chính sách bán hàng</h4>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="">Chính sách đổi hàng</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Chính sách bảo hành</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Chính sách giao nhận</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Chính sách bảo mật</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Tư vấn</h4>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="">Tư vấn phong cách</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Tư vấn chọn size</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Hướng dẫn mua hàng</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Hỏi đáp</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Đăng ký nhận tin</h4>
+                <form action="">
+                    <input type="text" placeholder="Nhập email của bạn">
+                    <button>Nhận tin</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p class="p-footer">© 2022 K&G Vietnam. All Rights Reserved</p>
+            <img class="img-footer" src="../img/bocongthuong.jfif" alt="">
+        </div>
+    </div>
+
+    <!-- modal -->
+    <div class="container">
+        <div class="modal" id="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="text-center" style="font-weight: bold;">ĐĂNG KÝ</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="txtHoten">Họ tên:</label>
+                                <input type="text" name="txtTenNV" id="txtHoten" placeholder="Họ tên" style="width: 100%;">
+                                <span id="tbHoten" class="text-danger">(*)</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEmail">Email:</label>
+                                <input type="text" name="txtEmail" id="txtEmail" placeholder="Email" style="width: 100%;">
+                                <span id="tbEmail" class="text-danger">(*)</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtTenNV">Mật khẩu:</label>
+                                <input type="password" name="txtMatkhau" id="txtMatkhau" placeholder="Mật khẩu" style="width: 100%;">
+                                <span id="tbMatkhau" class="text-danger">(*)</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtSDT">Số điện thoại:</label>
+                                <input type="text" name="txtSDT" id="txtSDT" placeholder="Số điện thoại" style="width: 100%;">
+                                <span id="tbSDT" class="text-danger">(*)</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtDate">Ngày sinh:</label>
+                                <input type="date" name="txtDate" id="txtDate" style="width: 100%;">
+                                <span id="tbDate" class="text-danger">(*)</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="button" value="Đăng ký" class="btn-danger" style="border-radius: 4px; width: 200px;height: 40px; margin-left: 140px; font-weight: 200;" id="btnThem">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12">
+                                <button type="button" class="btn-info" data-dismiss="modal" style="border-radius: 4px; height: 30px; width: 100px;">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

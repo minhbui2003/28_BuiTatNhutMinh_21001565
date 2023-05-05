@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARISTINO</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
+    <style>
+        [class*='col-']{
+            padding: 0px;
+        }
+        .product{
+            padding-top: 100px 0px;
+            width: 1089px;
+            margin-top: 15px;
+            margin-left: 200px;
+        }
+        .product-top{
+            margin-bottom: 30px;
+        }
+        .product-top p{
+            margin: 0 12px;
+            font-size: 15px;
+        }
+        .product-content-left{
+            width: 50%;
+        }
+        .product-content-left-big-img{
+            width: 80%;
+            padding-right: 20px;
+        }
+        .product-content-left-big-img img{
+            width: 100%;
+        }
+        .product-content-left-small-img{
+            width: 20%;
+        }
+        .product-content-left-small-img img{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .product-content-right{
+            width: 50%;
+            padding-left: 100px;
+        }
+        .product-content-right-product-name h3{
+          font-weight: bold;
+        }
+        .product-content-right-product-price{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .product-content-right-product-color img{
+            height: 50px;
+            width: 50px;
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 12px;
+            margin-bottom: 20px;
+        }
+        .product-content-right-product-color img:hover{
+            border-bottom: 2px solid black;
+        }
+        .size span{
+            display: inline-block;
+            padding: 3px 6px;
+            border: 1px solid black;
+            margin-left: 12px;
+            margin-bottom: 25px;
+            margin-right: 12px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .size span:hover{
+            background-color: rgb(130, 130, 130);
+            color: #ffff;
+        }
+        .quantity{
+            display: flex;
+        }
+        .quantity input{
+            margin-left: 15px;
+            margin-bottom: 12px;
+            width: 35px;
+            padding-left: 3px;
+        }
+        .product-content-right-product-button button{
+            width: 200px;
+            height: 50px;
+            display: block;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin: 20px 0 12px;
+        }
+        .product-content-right-product-button button:first-child{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffff;
+            padding-top: 15px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        .product-content-right-product-button button:first-child:hover{
+            background-color: rgb(130, 130, 130);
+            color: #ffff;
+        }
+        .product-content-right-product-button button:last-child{
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffff;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        .product-content-right-product-button button:last-child:hover{
+            background-color: rgb(130, 130, 130);
+            color: #ffff;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <a href="" class="logo">
+                <img src="../img/logo.png" alt="">
+            </a>
+            <div id="menu">
+                <div class="item">
+                    <a href="../index.html">Trang chủ</a>
+                </div>
+                <div class="item">
+                    <a href="../html/sanpham.html">Sản phẩm</a>
+                </div>
+                <div class="item">
+                    <a href="../html/tintuc.html">Tin tức</a>
+                </div>
+                <div class="item">
+                    <a href="../html/lienhe.html">Liên hệ</a>
+                </div>
+            </div>
+			<div id="search">
+				<input class="form-control sm-1" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+				<button class="btn btn-outline-success my-1 my-sm-0" type="submit">Tìm</button>
+			</div>
+            <div id="actions">
+                <div class="item">
+                    <a href="../html/login.html"><img src="../img/user.png" alt=""></a>
+                </div>
+                <div class="item">
+                    <a href="../html/trangsanphan.html"><img src="../img/cart.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <div class="container-product">
+                <div class="product-top">
+                    <p>Trang chủ / Sản Phẩm / Áo polo</p>
+                </div>
+                <div class="product-content row">
+                    <div class="product-content-left row">
+                        <div class="product-content-left-big-img">
+                            <img src="../img/polo1.webp" alt="">
+                        </div>
+                        <div class="product-content-left-small-img">
+                            <img src="../img/polo2.webp" alt="">
+                            <img src="../img/polo3.webp" alt="">
+                            <img src="../img/polo4.webp" alt="">
+                            <img src="../img/polo5.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="product-content-right row">
+                        <div class="product-content-right-product-name">
+                            <h3>Áo polo nam có cổ ngắn tay Aristino APS148S3</h3>
+                            <div class="product-content-right-product-price">
+                                <p>595.000đ</p>
+                            </div>
+                            <div class="product-content-right-product-color">
+                                <p><span style="font-weight: bold;">Màu sắc: </span>Trắng<span style="color: red;"></span> </p>       
+                                <div class="product-content-right-product-color-img">
+                                    <img src="../img/colorpolo1.webp" alt="">
+                                </div>
+                            </div>
+                            <div class="product-content-right-product-size">
+                                <p style="font-weight: bold;">Chọn Size:</p>
+                                <div class="size">
+                                    <span>S</span>
+                                    <span>M</span>
+                                    <span>L</span>
+                                    <span>XL</span>
+                                    <span>XXL</span>
+                                </div>
+                            </div>
+                            <div class="quantity">
+                                <p style="font-weight: bold;">Số lượng:</p>
+                                <input type="number" min="0" name="" id="" value="1">
+                            </div>
+                            <p style="color: red;">Vui lòng chọn size*</p>
+                            <div class="product-content-right-product-button">
+                                <button><img src="../img/shopping-cart.svg" alt=""><p>Thêm vào giỏ hàng</p></button>
+                                <button>MUA NGAY</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-bottom">
+                    <h5>Thông tin sản phẩm</h5>
+                    <hr>
+                    <p>FORM DÁNG: Slim Fit <p></p>
+                        THIẾT KẾ: <p></p>
+                        - Áo polo phom dáng Slim Fit ôm nhẹ vừa vặn mà vẫn thoải mái linh hoạt khi vận động. <p></p>
+                        - Thiết kế basic với cổ dệt lịch sự với họa tiết thêu chữ ký Aristino tinh tế. Áo in họa tiết kẻ khỏe khoắn mang đến diện mạo thu hút cho người mặc.<p></p>
+                        
+                        CHẤT LIỆU:<p></p>
+                        - 57% Cotton mềm mịn, thoáng khí, thấm mồ hôi vượt trội và thân thiện với làn da<p></p>
+                        - 38% Polyester giúp áo bền màu, sắc nét và độ trơn trượt, mỏng nhẹ.<p></p>
+                        - 5% Spandex giúp áo co giãn thoải mái<p></p>
+                        
+                        MÀU SẮC: Trắng 6 in, Xanh biển 19 in, Xanh tím than 35 in<p></p>
+                        
+                        SIZE: S/M/L/XL/XXL</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="box">
+                <div class="logo">
+                    <img src="../img/logo.png" alt="">
+                </div><br>
+                <h6>Giấy chứng nhận Đăng ký Kinh doanh số 0105911105 do Sở Kế hoạch và Đầu tư Thành phố Hà Nội cấp lần đầu ngày 08/06/2012 và sửa đổi lần thứ 10 ngày 05/05/2022</h6>
+            </div>
+            <div class="box">
+                <h4>Về chúng tôi</h4>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="../html/thuonghieu.html">Câu chuyện thương hiệu</a>
+                    </div>
+                    <div class="item">
+                        <a href="../html/tintuc.html">Tin tức</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Tuyển dụng</a>
+                    </div>
+                    <div class="item">
+                        <a href="../html/lienhe.html">Liên hệ</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Chính sách bán hàng</h4>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="">Chính sách đổi hàng</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Chính sách bảo hành</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Chính sách giao nhận</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Chính sách bảo mật</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Tư vấn</h4>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="">Tư vấn phong cách</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Tư vấn chọn size</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Hướng dẫn mua hàng</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Hỏi đáp</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Đăng ký nhận tin</h4>
+                <form action="">
+                    <input type="text" placeholder="Nhập email của bạn">
+                    <button>Nhận tin</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p class="p-footer">© 2022 K&G Vietnam. All Rights Reserved</p>
+            <img class="img-footer" src="../img/bocongthuong.jfif" alt="">
+        </div>
+    </div>
+</body>
+</html>

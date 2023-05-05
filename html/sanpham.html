@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARISTINO</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <style>
+        .header{
+            font-size: 16px;
+        }
+        .tieude{
+            display: flex;
+        }
+        .tieude li{
+            padding: 12px 12px;
+        }
+        .tieude li button{
+            border-radius: 5px;
+        }
+        .wrapper-sanpham{
+            max-width: 1170px;
+            margin: 0 auto;
+            margin-top: 15px;
+        }
+        .wrapper-sanpham ul{
+            list-style: none;
+        }
+        .sanpham{
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .sanpham li{
+            flex-basis: 25%;
+            padding-left: 15px;
+            padding-right: 15px;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        .sanpham li:hover a.buy-now{
+            bottom: 0px;
+        }
+        .sanpham li img{
+            max-width: 100%;
+            height: auto;
+        }
+
+        .sanpham li .sanpham-top{
+            position: relative;
+            overflow: hidden;
+        }        
+
+        .sanpham li .sanpham-top a.sanpham-thumb{
+            display: block;
+        }
+
+        .sanpham li .sanpham-top a.sanpham-thumb:hover img{
+            filter: opacity(80%);
+        }
+
+        .sanpham li .sanpham-top a.sanpham-thumb img{
+            display: block;
+        }
+
+        .sanpham li a.buy-now{
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            background-color: rgb(44, 44, 139);
+            color: #fff;
+            padding: 4px 0px;
+            position: absolute;
+            width: 100%;
+            bottom: -36px;
+            transition: 0.30s ease-in-out;
+            opacity: 0.90;
+        }
+
+        .sanpham li a{
+            display: block;
+            text-decoration: none;
+        }
+        .sanpham li .sanpham-name{
+            padding: 3px 0px;
+            color: black;
+        }
+        .sanpham li .sanpham-price{
+            color: black;
+            font-weight: 600;
+        }
+        .shop__product__option__right{
+            position: absolute;
+            top: 200px;
+            right: 190px;
+        }
+        .shop__product__option__left{
+            position: absolute;
+            top: 200px;
+            left: 190px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <a href="" class="logo">
+                <img src="../img/logo.png" alt="">
+            </a>
+            <div id="menu">
+                <div class="item">
+                    <a href="../index.html">Trang chủ</a>
+                </div>
+                <div class="item">
+                    <a href="../html/sanpham.html">Sản phẩm</a>
+                </div>
+                <div class="item">
+                    <a href="../html/tintuc.html">Tin tức</a>
+                </div>
+                <div class="item">
+                    <a href="../html/lienhe.html">Liên hệ</a>
+                </div>
+            </div>
+			<div id="search">
+				<input class="form-control sm-1" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+				<button class="btn btn-outline-success my-1 my-sm-0" type="submit">Tìm</button>
+			</div>
+            <div id="actions">
+                <div class="item">
+                    <a href="../html/login.html"><img src="../img/user.png" alt=""></a>
+                </div>
+                <div class="item">
+                    <a href="../html/trangsanphan.html"><img src="../img/cart.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wrapper-sanpham">
+            <div class="header">
+                <p>Trang chủ / Sản Phẩm</p>
+            </div>
+            <div class="sanpham-header">
+                <h3>SẢN PHẨM</h3>
+                <ul class="tieude">
+                    <li><a href=""><button style="background-color: black; color: #fff;" type="button">Tất cả</button></a></li>
+                    <li><a href=""><button type="button"><a style="color: black;" href="">Áo sơ mi</a> </button></a></li>
+                    <li><a href=""><button type="button"><a style="color: black;" href="">Áo polo</a></button></a></li>
+                    <li><a href=""><button type="button"><a style="color: black;" href="">Áo blazer</a></button></a></li>
+                    <li><a href=""><button type="button"><a style="color: black;" href="">Bộ suit</a></button></a></li>
+                    <li><a href=""><button type="button"><a style="color: black;" href="">Quần âu</a></button></a></li>
+                    <li><a href=""><button type="button"><a style="color: black;" href="">Quần short</a></button></a></li>
+                </ul> 
+                <div class="row">
+                        <div class="shop__product__option__left">
+                            <p>Hiển thị 1–24 trên 126 kết quả</p>
+                        </div>
+                        <div class="shop__product__option__right">
+                            Sắp xếp theo giá:
+                            <select>
+                                <option value="">Thấp đến cao</option>
+                                <option value="">100.000đ - 5.000.000đ</option>
+                                <option value="">5.000.000đ - 10.000.000đ</option>
+                            </select>
+                        </div>
+                </div>
+            </div>
+            <ul class="sanpham">
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham1.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Áo sơ mi ngắn tay Aristino ASS046S3 màu xanh kẻ</a>
+                            <div class="sanpham-price">850.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham2.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Áo sơ mi ngắn tay Aristino ASS050S3 màu xanh tím than</a>
+                            <div class="sanpham-price">825.000đ
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham3.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Áo sơ mi ngắn tay Aristino ASS056S3 màu trắng</a>
+                            <div class="sanpham-price">795.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham4.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Áo sơ mi ngắn tay Aristino ASS062S3 màu trắng</a>
+                            <div class="sanpham-price">725.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham5.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Áo polo nam Aristino APS158S3
+                            </a>
+                            <div class="sanpham-price">650.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham6.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Áo polo nam Aristino APS072S3</a>
+                            <div class="sanpham-price">550.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham7.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Áo polo nam Aristino APS048S3</a>
+                            <div class="sanpham-price">550.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham8.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Áo polo nam Aristino APS126S3 màu Xanh tím than</a>
+                            <div class="sanpham-price">650.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li><div class="sanpham-item">
+                    <div class="sanpham-top">
+                        <a href="" class="sanpham-thumb">
+                            <img src="../img/sanpham9.webp" alt="">
+                        </a>
+                        <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                    </div>
+                    <div class="sanpham-info">
+                        <a href="" class="sanpham-name">Áo blazer nam Aristino ABZ00502</a>
+                        <div class="sanpham-price">2.900.000đ</div>
+                    </div>
+                </div></li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham10.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Áo blazer Aristino ABZ00302</a>
+                            <div class="sanpham-price">2.900.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham11.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Áo blazer nam Aristino ABZ00901</a>
+                            <div class="sanpham-price">2.800.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham12.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Áo blazer nam Aristino ABZ00201</a>
+                            <div class="sanpham-price">2.600.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham13.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Bộ vest nam Aristino ASU00302</a>
+                            <div class="sanpham-price">7.500.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham14.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Bộ vest nam Aristino ASU00102</a>
+                            <div class="sanpham-price">7.500.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham15.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Bộ Suit nam Aristino ASUR02</a>
+                            <div class="sanpham-price">4.200.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham16.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Bộ com-lê Aristino ASU00502 </a>
+                            <div class="sanpham-price">7.500.000đ </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham17.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Quần âu Aristino ATR01003</a>
+                            <div class="sanpham-price">850.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham18.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Quần âu nam Aristino ATR00203</a>
+                            <div class="sanpham-price">895.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham19.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Quần âu Aristino ATRR17</a>
+                            <div class="sanpham-price">950.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham20.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Quần âu Aristino ATR03002</a>
+                            <div class="sanpham-price">950.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham21.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Quần short Aristino ASO041S3</a>
+                            <div class="sanpham-price">550.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham22.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Quần short Aristino ASO019S3</a>
+                            <div class="sanpham-price">495.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham23.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Quần short Aristino ASO018S3</a>
+                            <div class="sanpham-price">550.000đ</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sanpham-item">
+                        <div class="sanpham-top">
+                            <a href="" class="sanpham-thumb">
+                                <img src="../img/sanpham24.webp" alt="">
+                            </a>
+                            <a href="../html/trangsanphan.html" class="buy-now">Mua ngay</a>
+                        </div>
+                        <div class="sanpham-info">
+                            <a href="" class="sanpham-name">Quần short nam Aristino ASO009S3</a>
+                            <div class="sanpham-price">650.000đ</div>
+                        </div>
+                    </div>
+                </li> 
+            </ul>
+        </div>
+        <div class="list-page">
+            <div class="item">
+                <a href="">1</a>
+            </div>
+            <div class="item">
+                <a href="">2</a>
+            </div>
+            <div class="item">
+                <a href="">3</a>
+            </div>
+            <div class="item">
+                <a href="">4</a>
+            </div>
+        </div><br><br>
+
+        <div id="footer">
+            <div class="box">
+                <div class="logo">
+                    <img src="../img/logo.png" alt="">
+                </div><br>
+                <h6>Giấy chứng nhận Đăng ký Kinh doanh số 0105911105 do Sở Kế hoạch và Đầu tư Thành phố Hà Nội cấp lần đầu ngày 08/06/2012 và sửa đổi lần thứ 10 ngày 05/05/2022</h6>
+            </div>
+            <div class="box">
+                <h4>Về chúng tôi</h4>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="../html/thuonghieu.html">Câu chuyện thương hiệu</a>
+                    </div>
+                    <div class="item">
+                        <a href="../html/tintuc.html">Tin tức</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Tuyển dụng</a>
+                    </div>
+                    <div class="item">
+                        <a href="../html/lienhe.html">Liên hệ</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Chính sách bán hàng</h4>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="">Chính sách đổi hàng</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Chính sách bảo hành</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Chính sách giao nhận</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Chính sách bảo mật</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Tư vấn</h4>
+                <ul class="quick-menu">
+                    <div class="item">
+                        <a href="">Tư vấn phong cách</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Tư vấn chọn size</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Hướng dẫn mua hàng</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Hỏi đáp</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box">
+                <h4>Đăng ký nhận tin</h4>
+                <form action="">
+                    <input type="text" placeholder="Nhập email của bạn">
+                    <button>Nhận tin</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p class="p-footer">© 2022 K&G Vietnam. All Rights Reserved</p>
+            <img class="img-footer" src="../img/bocongthuong.jfif" alt="">
+        </div>
+    </div>
+</body>
+</html>
